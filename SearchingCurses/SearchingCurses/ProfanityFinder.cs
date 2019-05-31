@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace SearchingCurses
@@ -11,7 +12,7 @@ namespace SearchingCurses
 
         public ProfanityFinder()
         {
-            var dictFile = File.ReadAllText("../profanities.txt");
+            var dictFile = File.ReadAllText("profanities.txt");
             dictFile = dictFile.Replace("*","");
             dictFile = dictFile.Replace("(", "");
             dictFile = dictFile.Replace(")", "");
@@ -58,18 +59,19 @@ namespace SearchingCurses
 
         int CalcOccurances(string word, string lyrics)
         {
-            return Regex.Matches(word, lyrics).Count;
+            var pattern = "\\b" + word + "\\b";
+            return Regex.Matches(lyrics, pattern).Count;
         }
 
-        public string GetBadWordsSummary(SongLyrycs song)
+        public string GetBadWordsSummary(Song song)
         {
             var summary = "";
 
             var badWordsAmount = FindTopBadWords(song.lyrics);
 
-                foreach (var sth in badWordsAmount)
+                foreach (var word in badWordsAmount.OrderBy(word => word.Value))
             {
-                summary = summary + "\n" + sth.Key + " - " + sth.Value;
+                summary = summary + "\n" + word.Key + " - " + word.Value;
             }
 
                 return summary;
