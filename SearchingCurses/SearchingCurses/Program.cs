@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace SearchingCurses
     {
         static void Main()
         {
+            var webCache = new WebCache();
+
             var eminem = new Artist("Eminem");
             eminem.songTitles = new List<string> {
                 "Lose Yourself",
@@ -17,7 +20,8 @@ namespace SearchingCurses
                 "Sing for the moment"
             };
 
-            eminem.ShowProfanityStats();
+            eminem.CalculateSwearAndWordCount();
+            eminem.DisplayStatistics();
             //var songLyrics = new Song(artist:"Eminem", title:"Without me");
             //var profoanityFinder = new ProfanityFinder();
 
@@ -33,26 +37,18 @@ namespace SearchingCurses
         }
     }
 
-    class Artist
+    public class WebCache
     {
-        public string name;
-        public List<string> songTitles;
-
-        public Artist(string name)
+        SQLiteConnection connection;
+        public WebCache()
         {
-            this.name = name;
+            connection = new SQLiteConnection("Data Source=WebCache.sqlite;");
+            connection.Open();
+
         }
-
-        public void ShowProfanityStats()
+        public void SaveInCache(string url, string data)
         {
-            var profanityFinder = new ProfanityFinder();
-            foreach (var title in songTitles)
-            {
-
-                var song = new Song(name, title);
-                var profanitiesAmount = profanityFinder.CountBadWords(song.lyrics);
-                Console.WriteLine(song.title + ": " + profanitiesAmount);
-            }
+            var sql = SQLiteConnection
         }
     }
 }

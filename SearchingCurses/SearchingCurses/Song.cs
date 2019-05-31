@@ -19,6 +19,12 @@ namespace SearchingCurses
             lyrics = answer.lyrics;
             this.artist = artist;
             this.title = title;
+            Console.WriteLine("Pobrano " + artist + " " + title);
+        }
+
+        public int CountWords()
+        {
+            return lyrics.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries).Length;
         }
     }
 }
