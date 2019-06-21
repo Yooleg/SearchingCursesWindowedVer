@@ -20,7 +20,6 @@ namespace SearchingCurses
         public void CalculateSwearAndWordCount()
         {
             var profanityFinder = new ProfanityFinder();
-
             wordCount = 0;
             swearCount = 0;
             
