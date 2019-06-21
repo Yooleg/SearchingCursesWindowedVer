@@ -29,7 +29,6 @@ namespace SearchingCurses
             //};
 
             
-
             //eminem.CalculateSwearAndWordCount();
             //eminem.DisplayStatistics();
 

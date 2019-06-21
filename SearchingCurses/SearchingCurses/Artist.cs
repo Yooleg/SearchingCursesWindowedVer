@@ -26,7 +26,6 @@ namespace SearchingCurses
             
             foreach (var title in songTitles)
             {
-
                 var song = new Song(name, title);
                 swearCount += profanityFinder.CountBadWords(song.lyrics);
                 wordCount += song.CountWords();
@@ -40,8 +39,7 @@ namespace SearchingCurses
             int profanityIndex = 0;
             if(swearCount != 0)profanityIndex = wordCount / swearCount;
             Console.WriteLine("Dla Artysty " + name + " co " + profanityIndex + " słowo to przekleństwo.");
-           
-    }
+        }
         
         public int GetProfanityIndex()
         {

@@ -73,7 +73,6 @@ namespace SearchingCurses
             {
                 summary = summary + "\n" + word.Key + " - " + word.Value;
             }
-
                 return summary;
         }
 

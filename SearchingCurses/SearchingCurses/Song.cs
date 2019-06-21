@@ -21,6 +21,7 @@ namespace SearchingCurses
             lyrics = answer.lyrics;
             this.artist = artist;
             this.title = title;
+
             Console.WriteLine("Pobrano " + artist + " " + title);
         }
 

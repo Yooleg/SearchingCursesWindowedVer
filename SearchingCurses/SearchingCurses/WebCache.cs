@@ -35,7 +35,6 @@ namespace SearchingCurses {
             var query = $"select * from cache where url=? limit 1";
             var command = new SQLiteCommand(query, connection);
             command.Parameters.Add(new SQLiteParameter(DbType.String, "param1") {Value = url});
-
             return command.ExecuteScalar() != null;
         }
         
