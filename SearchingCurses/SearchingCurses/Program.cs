@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SearchingCurses
 {
@@ -12,34 +13,27 @@ namespace SearchingCurses
         static void Main()
         {
             
-            var eminem = new Artist("Eminem");
-            eminem.songTitles = new List<string> {
-                "Lose Yourself",
-                "Not Afraid",
-                "Sing for the moment",
-                "Without me",
-                "The Real Slim Shady",
-                "Stan",
-                "Rap God",
-                "asdasdasdasda",
-                "Cleanin' Out My Room",
-                "It's Ok",
-                "I'm Shady",
-            };
-
-            //var liroy = new Artist("Liroy");
-            //liroy.songTitles = new List<string>
-            //{
-
-
+            //var eminem = new Artist("Eminem");
+            //eminem.songTitles = new List<string> {
+            //    "Lose Yourself",
+            //    "Not Afraid",
+            //    "Sing for the moment",
+            //    "Without me",
+            //    "The Real Slim Shady",
+            //    "Stan",
+            //    "Rap God",
+            //    "asdasdasdasda",
+            //    "Cleanin' Out My Room",
+            //    "It's Ok",
+            //    "I'm Shady",
             //};
 
-            eminem.CalculateSwearAndWordCount();
-            eminem.DisplayStatistics();
+            
 
-            //liroy.CalculateSwearAndWordCount();
-            //liroy.DisplayStatistics();
+            //eminem.CalculateSwearAndWordCount();
+            //eminem.DisplayStatistics();
 
+           
 
             //var songLyrics = new Song(artist:"Eminem", title:"Without me");
             //var profoanityFinder = new ProfanityFinder();
@@ -51,8 +45,9 @@ namespace SearchingCurses
             //Console.WriteLine(profoanityFinder.GetBadWordsSummary(songLyrics));
 
 
-            Console.WriteLine("Done.");
-            Console.ReadLine();
+            //Console.WriteLine("Done.");
+            //Console.ReadLine();
+            Application.Run(new Form1());
         }
     }
 }
