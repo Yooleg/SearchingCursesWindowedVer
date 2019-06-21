@@ -10,6 +10,7 @@ namespace SearchingCurses
 
         public int wordCount;
         public int swearCount;
+        
 
         public Artist(string name)
         {
@@ -29,14 +30,25 @@ namespace SearchingCurses
                 var song = new Song(name, title);
                 swearCount += profanityFinder.CountBadWords(song.lyrics);
                 wordCount += song.CountWords();
+                Console.WriteLine(swearCount + "    " + wordCount);
+                //Console.WriteLine(song.lyrics);
             }
         }
-
+        
         public void DisplayStatistics()
         {
-            int profanityIndex = wordCount / swearCount;
+            int profanityIndex = 0;
+            if(swearCount != 0)profanityIndex = wordCount / swearCount;
             Console.WriteLine("Dla Artysty " + name + " co " + profanityIndex + " słowo to przekleństwo.");
+           
+    }
+        
+        public int GetProfanityIndex()
+        {
+            if (swearCount == 0) return 0;
+            return wordCount / swearCount;
         }
+
     }
 }
 

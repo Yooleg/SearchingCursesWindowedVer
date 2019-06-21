@@ -15,6 +15,7 @@ namespace SearchingCurses
             //var browser = new WebClient();
             var url = "https://api.lyrics.ovh/v1/" + artist + "/" + title;
             //var json = browser.DownloadString(url);
+            Console.WriteLine(title + "    " + url);
             var json = WebCache.GetOrDownload(url);
             var answer = JsonConvert.DeserializeObject<LyricsOvhAnswer>(json);
             lyrics = answer.lyrics;
