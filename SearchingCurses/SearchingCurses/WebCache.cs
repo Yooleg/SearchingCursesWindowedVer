@@ -53,7 +53,7 @@ namespace SearchingCurses {
                 return browser.DownloadString(url);
             }
             catch (WebException webException){
-                Console.WriteLine("Nie udało się pobrać: " + url);
+                Console.WriteLine("Couldn't download: " + url);
                 return "{\"lyrics\":\"\"}";
             }
         }

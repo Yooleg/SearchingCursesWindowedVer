@@ -22,7 +22,7 @@ namespace SearchingCurses
             this.artist = artist;
             this.title = title;
 
-            Console.WriteLine("Pobrano " + artist + " " + title);
+            Console.WriteLine("Downloaded " + artist + " " + title);
         }
 
         public int CountWords()

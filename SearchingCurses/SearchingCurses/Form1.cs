@@ -57,6 +57,7 @@ namespace SearchingCurses
             nameOfArtist.DisplayStatistics();
             Result.Text = "";
             Result.Text +=   "For " + artistName + " every " + nameOfArtist.GetProfanityIndex() + " is a swear word.";
+            HistoryOfResults.Items.Add(this.Result.Text);
         }
 
         private void Result_TextChanged(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace SearchingCurses
         {
             int profanityIndex = 0;
             if(swearCount != 0)profanityIndex = wordCount / swearCount;
-            Console.WriteLine("Dla Artysty " + name + " co " + profanityIndex + " słowo to przekleństwo.");
+            Console.WriteLine("For " + name + " every " + profanityIndex + " word is a swear word.");
         }
         
         public int GetProfanityIndex()
