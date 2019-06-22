@@ -1,0 +1,2 @@
+Z jakiegoœ powodu kiedy sprawdza³em  sobie repozytorium jeœli po wejœciu do kodu form1 bêdzie wyœwietla³ errory to wystarczy uruchomiæ kompilacjê
+i uruchomiæ plik sln jeszcze raz i Form1 bêdzie pokazywa³ siê poprawnie
